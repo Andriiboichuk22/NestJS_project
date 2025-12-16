@@ -3,8 +3,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './users/users.module';
 import { ItemsModule } from './items/items.module';
 import { TrackingModule } from './tracking/tracking.module';
-import { User } from './users/user.entity';
 import { Item } from './items/item.entity';
+import { User } from './users/user.entity';
 import { Tracking } from './tracking/tracking.entity';
 
 
