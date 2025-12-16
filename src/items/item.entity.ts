@@ -1,10 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 import { Tracking } from '../tracking/tracking.entity';
-
-export enum ItemType {
-  BOOK = 'book',
-  ARTICLE = 'article',
-}
 
 @Entity()
 export class Item {
@@ -15,14 +10,17 @@ export class Item {
   title: string;
 
   @Column()
+  type: string;
+
+  @Column({ nullable: true })
   author: string;
 
-  @Column({ type: 'text', nullable: true })
+  @Column({ nullable: true })
   description: string;
 
-  @Column({ type: 'enum', enum: ItemType })
-  type: ItemType;
+  @Column({ default: false })
+  isCompleted: boolean;
 
-  @OneToMany(() => Tracking, tracking => tracking.item)
+  @OneToMany(() => Tracking, tracking => tracking.item, { cascade: true })
   trackings: Tracking[];
 }

@@ -6,7 +6,7 @@ import { Item } from '../items/item.entity';
 export class Tracking {
   @PrimaryGeneratedColumn()
   id: number;
-
+  
   @ManyToOne(() => User, user => user.trackings, { onDelete: 'CASCADE' })
   user: User;
 
@@ -18,4 +18,5 @@ export class Tracking {
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   updatedAt: Date;
+  
 }
