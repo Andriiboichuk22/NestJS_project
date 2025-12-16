@@ -13,11 +13,11 @@ import { Tracking } from './tracking/tracking.entity';
       type: 'postgres',
       host: 'localhost',
       port: 5432,
-      username: 'postgres',      // твій логін до PostgreSQL
-      password: 'your_password', // твій пароль
-      database: 'book_tracker',  // база даних, яку створиш
+      username: 'postgres',
+      password: 'password',
+      database: 'book_tracker',
       entities: [User, Item, Tracking],
-      synchronize: true,         // автоматичне створення таблиць (тільки для dev)
+      synchronize: true, 
     }),
     UsersModule,
     ItemsModule,
